@@ -1,7 +1,5 @@
 :root {
-    --primary-color: black;
-    --secondary-color: #ffffff;
-    --tertiary-color: #024e76;
+    --navy: #03045e;
 }
 
 * {
@@ -13,6 +11,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F0FFFF;
+    color: var(--navy);
+    display: inline-block;
 }
 
 section {
@@ -24,7 +24,6 @@ section {
 header {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
     padding: 20px 35px;
     flex-wrap: wrap;
 }
@@ -32,6 +31,7 @@ header {
 header h1 {
     font-weight: bold;
     font-size: 50px;
+    text-decoration: none;
 }
 
 header nav {
@@ -43,12 +43,11 @@ header nav ul {
     flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
-    align-items: center;
 }
 
 header nav ul li a{
     padding: 10px 10px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /*Hero style*/
@@ -74,24 +73,35 @@ header nav ul li a{
     justify-content: flex-start;
     flex-wrap: nowrap;
     flex-basis: 10%;
+    margin: 0 20px 0 0;
 }
 
-/*section info = parent container for each section*/
+/* level2 section info containers. This is the parent container for content in each section (e.g. about me, work, contact)*/
 .level2-section-info {
-    display: flex;
+    display: inline-block;
     padding: 0 20px;
     flex-wrap: wrap;
     text-align: left;
     flex: 0 100%;
     min-height: 200px;
+    flex-direction: row;
 }
 
 .level2-section-info p {
-    flex: 5;
     margin-right: 5px;
+    text-align: center;
 }
 
-/*section title containter = child container of section info containers */
+
+.level2-section-info a {
+    text-decoration: none;
+}
+
+.level2-section-info img {
+    max-height: 150px;
+}
+
+/*section title containter. This is the parent container for the titles of each section. */
 .level2-section-title {
     text-align: left;
     border-right: 1px solid black;
@@ -102,19 +112,21 @@ header nav ul li a{
     min-width: 85px;
 }
 
-/*project info = section info child container*/
+/*This is the parent info for the projects in the Work section*/
 .level3-project-info {
     flex: 0 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 5px 0 0;
+    flex-wrap: wrap;
+    
 }
 
 .level3-project-info h4 {
     font-size: 15px;
-    color: orange
-}
+    color: orange;
+    margin: 10px 0 0 0; 
 
-.level3-project-info p {
-    font-size: 10px;
-    color: green;
 }
 
 .level3-project-info img {
@@ -123,23 +135,9 @@ header nav ul li a{
     flex-wrap: wrap;
 }
 
-    /*project background images*/
-    .runbuddy {
-        background-image: url(./images/hero-bg.jpg);
-        flex: 0 50%;
+/*profile headshot alignment and styling*/
+    .chikapic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    .placeholder1 {
-        background-image: url(./images/download.png);
-        flex: 0 25%;
-    }
-
-    .placholder2 {
-        background-image: url(./images/download.png);
-        flex: 0 25%;
-    }
-
-.level2-section-info img {
-    max-height: 150px;
-    flex 1;
-}
